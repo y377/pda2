@@ -4,7 +4,7 @@ import { feishuAutoLogin } from './autoauth.js';
 
 // 1. 配置和全局变量
 const FEISHU_CONFIG = {
-    client_id: 'cli_a8be137e6579500b',
+    client_id: 'cli_a8d78007527c5013',
     redirect_uri: 'https://pda2.jsjs.net/'
   };
   let currentUser = null;
