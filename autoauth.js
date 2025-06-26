@@ -157,7 +157,7 @@ const getSignatureFromBackend = async () => {
     // 获取当前页面URL（去除hash部分）
     const url = location.href.split('#')[0];
     
-    const response = await fetch('https://pdabot.jsjs.net/auth/signature', {
+    const response = await fetch('https://pda2.jsjs.net/auth/signature', {
       method: 'POST',
       headers: { 
         'Content-Type': 'application/json',
@@ -312,7 +312,7 @@ const fallbackToRequestAuthCode = (resolve, reject) => {
 const callBackendAuth = async (code) => {
   try {
     console.log('调用后端认证接口...');
-    const response = await fetch('https://pdabot.jsjs.net/auth/feishu', {
+    const response = await fetch('https://pda2.jsjs.net/auth/feishu', {
       method: 'POST',
       headers: { 
         'Content-Type': 'application/json',
@@ -320,7 +320,7 @@ const callBackendAuth = async (code) => {
       },
       body: JSON.stringify({ 
         code, 
-        redirect_uri: 'https://pdabot.jsjs.net/',
+        redirect_uri: 'https://pda2.jsjs.net/',
         client_type: 'feishu-app'
       })
     });
