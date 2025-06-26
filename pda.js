@@ -234,8 +234,8 @@ const waitForData = () => {
 const LoginManager = {
   handleCallback: async ({ code, type }) => {
     const url = type === 'scan' 
-      ? 'https://pdabot.jsjs.net/auth/scan' 
-      : 'https://pdabot.jsjs.net/auth/feishu';
+      ? 'https://pda2.jsjs.net/auth/scan' 
+      : 'https://pda2.jsjs.net/auth/feishu';
     try {
       const res = await fetch(url, {
         method: 'POST',
@@ -266,8 +266,8 @@ const LoginManager = {
 
   redirectToFeishu: () => {
     const params = new URLSearchParams({
-      client_id: 'cli_a8be137e6579500b',
-      redirect_uri: 'https://pdabot.jsjs.net/',
+      client_id: 'cli_a8d78007527c5013',
+      redirect_uri: 'https://pda2.jsjs.net/',
       response_type: 'code',
       state: Math.random().toString(36).slice(2)
     });
@@ -878,7 +878,7 @@ const sendToFeishu = () => {
     user_access_token: user_access_token
   };
 
-  fetch("https://pdabot.jsjs.net/api/send-card", {
+  fetch("https://pda2.jsjs.net/api/send-card", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -938,7 +938,7 @@ const sendApplyNotify = () => {
     showToast('旧件品牌、旧件SN、旧件PN均为必填项', 'warning');
     return;
   }
-  fetch('https://pdabot.jsjs.net/api/apply', {
+  fetch('https://pda2.jsjs.net/api/apply', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({
