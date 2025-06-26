@@ -5,7 +5,7 @@ import { feishuAutoLogin } from './autoauth.js';
 // 1. 配置和全局变量
 const FEISHU_CONFIG = {
     client_id: 'cli_a8be137e6579500b',
-    redirect_uri: 'https://pdabot.jsjs.net/'
+    redirect_uri: 'https://pda2.jsjs.net/'
   };
   let currentUser = null;
   
@@ -145,7 +145,7 @@ const FEISHU_CONFIG = {
       return;
     }
     try {
-      const res = await fetch('https://pdabot.jsjs.net/api/chat-list', {
+      const res = await fetch('https://pda2.jsjs.net/api/chat-list', {
         headers: {
           'Authorization': 'Bearer ' + userId
         }
@@ -177,8 +177,8 @@ const FEISHU_CONFIG = {
     try {
       console.log('开始处理登录回调:', { code, type });
       const url = type === 'scan'
-        ? 'https://pdabot.jsjs.net/auth/scan'
-        : 'https://pdabot.jsjs.net/auth/feishu';
+        ? 'https://pda2.jsjs.net/auth/scan'
+        : 'https://pda2.jsjs.net/auth/feishu';
       console.log('请求URL:', url);
       
       const response = await fetch(url, {
